@@ -1,0 +1,92 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Responsive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos opcionales para pantallas grandes como TV -->
+    <style>
+        @media screen and (min-width: 1920px) {
+            body {
+                font-size: 1.5rem;
+            }
+            .login-container {
+                max-width: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <a href="registra.html" class="btn btn-success">Registrarme</a>
+        <h1 class="text-center mb-4 text-primary">Sistema  de evaluacion de pensamiento matemático</h1>
+    </div>
+    <div class="bg-light d-flex align-items-center justify-content-center container mt-5" style="min-height: 50vh;">
+        <div class="w-100" style="max-width: 400px;">
+
+            <h2 class="card-title text-center mb-4">Login para jugar Sudoku</h2>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electronico</label>
+                    <input type="email" id="email" class="form-label" required />
+                </div>
+                <div class="mb-3">
+                    <label for="nivel" class="form-label">Seleccionar nivel</label>
+                    <select id="nivel" name="nivel">
+                        <option value=0>Muy Facil</option>
+                        <option value=1>Facil</option>
+                        <option value=2>Intermedio</option>
+                        <option value=3>Dificil</option>
+                        <option value=4>Avanzado</option>
+                    </select>
+                </div>
+                <button type="submit" id="jugar" class="btn btn-primary w-100">Jugar</button>
+            </form>
+        </div>
+    </div>
+    <div class="container mt-5" id="cronometro" hidden>
+        <hr>
+        <h2 id="entrada" class="card-title text-center mb-4"></h2>
+        <h2 id="tiempo" class="card-title text-center mb-4">00:00:00</h2>
+        <hr>
+    </div>
+    <div class="container mt-5  bg-light" id="sudoku" hidden>
+        <h3 class="card-title text-center mb-4">Sudoku</h1>
+            <table id="tabla" align="center" style="border: 5px solid blue;"></table>
+            <p id="fallas" class="text-center"></p>
+            <p id="puntaje" class="text-center"></p>
+            <p id="solucion" class="text-center"></p>
+            <div class="d-flex justify-content-center align-items-center">
+            <button onclick="finaliza()" id="finalizar" class="btn btn-primary">Finalizar</button>
+            <a href="participar.html" id="salir" class="btn btn-danger"></a>
+            </div>
+    </div>
+    <div class="container mt-5">
+        <div class="table-responsive">
+            <table border="2px" id="tablainforme" class="table table-bordered table-striped table-hover" hidden>
+                <thead class="table-dark">
+                    <tr>
+                        <th>Item</th>
+                        <th>Nombre</th>
+                        <th>nivel</th>
+                        <th>Duracion</th>
+                        <th>Errores</th>
+                        <th>Puntaje</th>
+                        <th>Fecha Jugada</th>
+                    </tr>
+                </thead>
+                <tbody id="jajatabla">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="cronometro.js"></script>
+    <script src="login.js"></script>
+    <script src="participa.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
